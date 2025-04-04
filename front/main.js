@@ -25,6 +25,7 @@ async function assinarItem(id, nome) {
     } else {
       alert(texto);
     }
+    window.location.reload();
   } catch (error) {
     console.log(error);
   }
@@ -45,6 +46,7 @@ async function removerAssinatura(id) {
     } else {
       alert(texto);
     }
+    window.location.reload();
   } catch (error) {
     console.log(error);
   }
