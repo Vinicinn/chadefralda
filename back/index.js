@@ -11,7 +11,7 @@ function lerLista() {
   return fs.readFileSync("back/lista.json");
 }
 function salvarLista(lista) {
-  fs.writeFileSync("lista.json", JSON.stringify(lista));
+  fs.writeFileSync("back/lista.json", JSON.stringify(lista));
 }
 
 app.get("/", (req, res) => {

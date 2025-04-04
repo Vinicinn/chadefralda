@@ -1,4 +1,4 @@
-const URL = "http://localhost:5000";
+const URL = "https://chadefralda-dzr5.onrender.com";
 
 async function carregarLista() {
   try {
