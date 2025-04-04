@@ -2,12 +2,13 @@ import express from "express";
 import cors from "cors";
 import fs from "fs";
 
+const PORT = process.env.PORT || 5000;
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 function lerLista() {
-  return fs.readFileSync("lista.json");
+  return fs.readFileSync("back/lista.json");
 }
 function salvarLista(lista) {
   fs.writeFileSync("lista.json", JSON.stringify(lista));
@@ -48,6 +49,6 @@ app.delete("/", (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log("Servidor rodando na porta 5000");
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
