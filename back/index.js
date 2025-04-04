@@ -25,6 +25,9 @@ app.post("/", (req, res) => {
   const lista = JSON.parse(lerLista());
   const item = lista.find((item) => item.id === id);
   if (item) {
+    if (item.nome !== "") {
+      return res.status(400).send("Item já assinado!");
+    }
     item.nome = nome;
     salvarLista(lista);
     res.status(200).send("Item assinado com sucesso!");
